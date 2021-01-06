@@ -14,10 +14,10 @@ while True :
 
         if score_avg >= 90 :
             grade = 'A'
-        elif score_avg <= 80 :
+        elif score_avg >= 80 :
             grade = 'B'
         else :
             grade = 'C'
 
-        print("입력된 점수의 총합은 %d점이고, 평균은 %f점입니다. 학점은 /'%s/'입니다." %(score_sum, score_avg, grade))
+        print("입력된 점수의 총합은 %d점이고, 평균은 %.2f점입니다. 학점은 '%s'입니다." %(score_sum, score_avg, grade))
         break
