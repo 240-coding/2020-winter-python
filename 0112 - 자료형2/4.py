@@ -9,3 +9,5 @@ if num in dicKor:
     print(dicKor[num])
 elif num in dicEng:
     print(dicEng[num])
+else:
+    print('잘못 입력하셨습니다.')
