@@ -1,21 +1,25 @@
 import tkinter
-import math
+import math  # math 모듈 임포트
+
 window = tkinter.Tk()
+cal = tkinter.StringVar()
+cal.set(' ')
 
-frame = tkinter.Frame(window, borderwidth = 2, relief = tkinter.GROOVE)
-frame.pack()
+result = tkinter.StringVar()
+result.set(' ')
 
-ep = tkinter.StringVar()
-entry = tkinter.Entry(frame, textvariable = ep)
-entry.pack(side = 'left')
 
-label = tkinter.Label(frame, text=' ')
-label.pack(side = 'right')
+def printResult():
+    result = cal.get()
 
-def onClick() :
-    label.config(text = str(eval(ep.get())))
 
-button = tkinter.Button(window, text = '계산', command = onClick)
+label1 = tkinter.Label(window, text="계산할 수식을 입력하세요")
+label1.pack()
+entry = tkinter.Entry(window, textvariable=cal)
+entry.pack()
+button = tkinter.Button(window, text="계산", command=printResult)
 button.pack()
+label2 = tkinter.Label(window, textvariable=result)
+label2.pack()
 
 window.mainloop()
