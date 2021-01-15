@@ -10,7 +10,7 @@ result.set(' ')
 
 
 def printResult():
-    result = cal.get()
+    result.set(str(eval(cal.get())))  # get() 함수를 이용해서 변수의 값을 불러와야 함
 
 
 label1 = tkinter.Label(window, text="계산할 수식을 입력하세요")
