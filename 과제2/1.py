@@ -10,6 +10,7 @@ def printList():   # 전체 연락처 출력
     print("이름\t전화번호")
     for i in range(len(contact_list)):
         print(contact_list[i][0], contact_list[i][1])
+    print("\n")
 
 
 def addContact(name, number):  # 연락처 추가
@@ -20,10 +21,15 @@ def addContact(name, number):  # 연락처 추가
 
 
 def deleteContact(name):   # 연락처 삭제 - 중복 이름 모두 삭제가 안 됨
-    for lst in contact_list:
-        if name in lst[0]:
-            remove_index = contact_list.index(lst)
-            contact_list.pop(remove_index)
+    flag = 1
+    while flag:
+        flag = 0
+        for lst in contact_list:
+            if name in lst[0]:
+                remove_index = contact_list.index(lst)
+                contact_list.pop(remove_index)
+                flag = 1
+
     print("\n")
     printList()
 
@@ -44,6 +50,7 @@ while True:
     4 : 연락처 수정
     5 : 종료
     메뉴를 선택하세요[1-5] : """))
+    print("\n")
 
     if num == 1:
         printList()
