@@ -1,8 +1,9 @@
-file = open("contact.txt", "w+")
+file = open("contact.txt", "a+", encoding="UTF8")
+file.seek(0)
 contact_list = []
 
 for line in file:  # 연락처 리스트 초기화
-    contact_list.append(line.split)
+    contact_list.append(line.split())
 contact_list.sort()
 
 
@@ -75,6 +76,6 @@ while True:
         break
 
 for i in range(len(contact_list)):
-    file.write(contact_list[i][0]+' '+contact_list[i][1])
+    file.write(contact_list[i][0]+' '+contact_list[i][1]+'\n')
 
 file.close()
